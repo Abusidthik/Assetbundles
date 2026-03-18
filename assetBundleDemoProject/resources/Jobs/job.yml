@@ -1,0 +1,16 @@
+resources:
+  jobs:
+    AssetBundleJobTest:
+      name: ${bundle.target}_AssetBundleJobTest
+      tasks:
+        - task_key: TASK1
+          notebook_task:
+            notebook_path: ../../src/Notebook/Test_AssetBundle_Git.ipynb
+            base_parameters:
+              catalog: ${var.catalog}
+              schema: ${var.schema}
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
+
